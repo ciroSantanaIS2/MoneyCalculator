@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author Ciro
- */
 public class ExchangeRate {
-    
+
+    private Currency from, to;
+    private float rate;
+
+    public ExchangeRate(Currency currency1, Currency currency2, float rate) {
+        this.from = currency1;
+        this.to = currency2;
+        this.rate = rate;
+    }
 }

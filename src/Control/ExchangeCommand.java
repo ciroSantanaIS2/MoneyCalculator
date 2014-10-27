@@ -1,14 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Control;
 
-/**
- *
- * @author Ciro
- */
+import Model.Currency;
+import Model.CurrencySet;
+import Model.Money;
+import View.UserInterface.ExchangeDialog;
+
 public class ExchangeCommand {
+    CurrencySet set;
+
+    public ExchangeCommand(CurrencySet set) {
+        this.set = set;
+    }
+
+    public void execute() {
+        ExchangeDialog dialog = new ExchangeDialog();
+        Money money = dialog.getMoney();
+        Currency currencyTo = dialog.getCurrency();
+        
+        ExchangeRate rate = new ExchangeRateLoader(Currency to, Currency from).load();
+    }
+    
     
 }
