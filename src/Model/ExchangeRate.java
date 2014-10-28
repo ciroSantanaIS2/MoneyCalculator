@@ -10,4 +10,8 @@ public class ExchangeRate {
         this.to = currency2;
         this.rate = rate;
     }
+
+    public float getRate() {
+        return rate;
+    }
 }
