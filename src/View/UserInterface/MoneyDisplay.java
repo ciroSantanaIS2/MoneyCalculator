@@ -5,10 +5,16 @@
  */
 package View.UserInterface;
 
+import Model.Money;
+
 /**
  *
  * @author Ciro
  */
 public class MoneyDisplay {
+
+    public static void display(Money money) {
+        System.out.println(money.toString());
+    }
     
 }

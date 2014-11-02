@@ -9,5 +9,13 @@ public class Exchange {
         this.money = money;
         this.currency = currency;
     }
+
+    public Money getMoney() {
+        return money;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
     
 }

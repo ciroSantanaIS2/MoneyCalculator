@@ -5,9 +5,9 @@ public class ExchangeRate {
     private Currency from, to;
     private float rate;
 
-    public ExchangeRate(Currency currency1, Currency currency2, float rate) {
-        this.from = currency1;
-        this.to = currency2;
+    public ExchangeRate(Currency currencyFrom, Currency currencyTo, float rate) {
+        this.from = currencyFrom;
+        this.to = currencyTo;
         this.rate = rate;
     }
 

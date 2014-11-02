@@ -2,8 +2,13 @@ package Control;
 
 import Model.Currency;
 import Model.CurrencySet;
+import Model.Exchange;
+import Model.ExchangeRate;
 import Model.Money;
+import View.Persistence.ExchangeRateLoader;
+import View.Processes.Exchanger;
 import View.UserInterface.ExchangeDialog;
+import View.UserInterface.MoneyDisplay;
 
 public class ExchangeCommand {
     CurrencySet set;
@@ -13,12 +18,15 @@ public class ExchangeCommand {
     }
 
     public void execute() {
-        ExchangeDialog dialog = new ExchangeDialog();
-        Money money = dialog.getMoney();
-        Currency currencyTo = dialog.getCurrency();
+        ExchangeDialog dialog = new ExchangeDialog(set);
+        Exchange exchange = dialog.execute();
+        ExchangeRate rate = new ExchangeRateLoader().load(exchange.getMoney().getCurrency(), exchange.getCurrency());
         
-        ExchangeRate rate = new ExchangeRateLoader(Currency to, Currency from).load();
+        float result = Exchanger.convert(exchange.getMoney().getAmount(), rate.getRate());
+        
+        MoneyDisplay.display(new Money(exchange.getCurrency(), result));
     }
     
     
 }
+
