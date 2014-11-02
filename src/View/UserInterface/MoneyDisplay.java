@@ -5,6 +5,7 @@
  */
 package View.UserInterface;
 
+import Model.ExchangeRate;
 import Model.Money;
 
 /**
@@ -13,8 +14,10 @@ import Model.Money;
  */
 public class MoneyDisplay {
 
-    public static void display(Money money) {
-        System.out.println(money.toString());
+    public static void display(Money money, ExchangeRate rate) {
+        System.out.println("El tipo de cambio de " + rate.getCurrencyFrom() + " a " + 
+                rate.getCurrencyTo() + " es: " + rate.getRate());
+        System.out.println("Su cambio es: " + money.toString());
     }
     
 }

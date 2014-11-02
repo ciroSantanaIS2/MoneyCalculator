@@ -18,4 +18,8 @@ public class Currency {
     String getName() {
         return name;
     }
+
+    String getSymbol() {
+        return symbol;
+    }
 }

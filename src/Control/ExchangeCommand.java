@@ -24,7 +24,9 @@ public class ExchangeCommand {
         
         float result = Exchanger.convert(exchange.getMoney().getAmount(), rate.getRate());
         
-        MoneyDisplay.display(new Money(exchange.getCurrency(), result));
+        System.out.println("------------------------------------------------");
+        
+        MoneyDisplay.display(new Money(exchange.getCurrency(), result), rate);
     }
     
     

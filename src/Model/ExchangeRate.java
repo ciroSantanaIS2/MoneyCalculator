@@ -14,4 +14,12 @@ public class ExchangeRate {
     public float getRate() {
         return rate;
     }
+
+    public String getCurrencyFrom() {
+        return from.toString();
+    }
+
+    public String getCurrencyTo() {
+        return to.toString();
+    }
 }
