@@ -9,4 +9,13 @@ public class Currency {
         this.name = name;
         this.symbol = symbol;
     }
+    
+    @Override
+    public String toString() {
+        return name + " (" + symbol + ")";
+    }
+
+    String getName() {
+        return name;
+    }
 }
