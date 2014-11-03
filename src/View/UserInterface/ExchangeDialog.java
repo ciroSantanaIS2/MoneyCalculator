@@ -9,23 +9,11 @@ import java.util.Scanner;
 public class ExchangeDialog {
     
     private CurrencySet set;
+    Exchange exchange;
+    
     public ExchangeDialog(CurrencySet set) {
         this.set = set;
-    }
-    
-    public Exchange execute() {
-        
-        return new Exchange(new Money(readCurrency("origen"), readAmount()), readCurrency("destino"));
-    }
-    
-    
-    
-    public Money getMoney() {
-        return new Money(new Currency("Dólar", "$"), (float) 458.29);
-    }
-    
-    public Currency getCurrency() {
-        return new Currency("Euro", "€");
+        exchange = new Exchange(new Money(readCurrency("origen"), readAmount()), readCurrency("destino"));
     }
 
     private void showAvailableCurrencies(CurrencySet set) {
@@ -55,6 +43,10 @@ public class ExchangeDialog {
         System.out.println("Ingrese la cantidad que desea cambiar: ");
         Scanner number = new Scanner(System.in);
         return number.nextFloat();
+    }
+
+    public Exchange getExchange() {
+        return exchange;
     }
 
 }

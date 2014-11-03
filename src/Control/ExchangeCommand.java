@@ -18,15 +18,29 @@ public class ExchangeCommand {
     }
 
     public void execute() {
-        ExchangeDialog dialog = new ExchangeDialog(set);
-        Exchange exchange = dialog.execute();
-        ExchangeRate rate = new ExchangeRateLoader().load(exchange.getMoney().getCurrency(), exchange.getCurrency());
         
-        float result = Exchanger.convert(exchange.getMoney().getAmount(), rate.getRate());
+        Exchange exchange = readExchange();
+        ExchangeRate rate = readExchangeRate(exchange);
+        float result = convert(exchange, rate);
+        displayResult(exchange, result, rate);
         
+    }
+
+    private Exchange readExchange() {
+        return new ExchangeDialog(set).getExchange();
+    }
+
+    private ExchangeRate readExchangeRate(Exchange exchange) {
+        return new ExchangeRateLoader().load(exchange.getMoney().getCurrency(), exchange.getCurrency());
+    }
+
+    private float convert(Exchange exchange, ExchangeRate rate) {
+        return Exchanger.convert(exchange.getMoney().getAmount(), rate.getRate());
+    }
+
+    private void displayResult(Exchange exchange, float result, ExchangeRate rate) {
         System.out.println("------------------------------------------------");
-        
-        MoneyDisplay.display(new Money(exchange.getCurrency(), result), rate);
+        new MoneyDisplay(new Money(exchange.getCurrency(), result), rate).display();
     }
     
     
