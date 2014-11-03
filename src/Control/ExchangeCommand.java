@@ -21,8 +21,8 @@ public class ExchangeCommand {
         
         Exchange exchange = readExchange();
         ExchangeRate rate = readExchangeRate(exchange);
-        float result = convert(exchange, rate);
-        displayResult(exchange, result, rate);
+        Money result = convert(exchange, rate);
+        displayResult(result, rate);
         
     }
 
@@ -34,13 +34,13 @@ public class ExchangeCommand {
         return new ExchangeRateLoader().load(exchange.getMoney().getCurrency(), exchange.getCurrency());
     }
 
-    private float convert(Exchange exchange, ExchangeRate rate) {
-        return Exchanger.convert(exchange.getMoney().getAmount(), rate.getRate());
+    private Money convert(Exchange exchange, ExchangeRate rate) {
+        return Exchanger.convert(exchange.getCurrency(), exchange.getMoney().getAmount(), rate.getRate());
     }
 
-    private void displayResult(Exchange exchange, float result, ExchangeRate rate) {
+    private void displayResult(Money result, ExchangeRate rate) {
         System.out.println("------------------------------------------------");
-        new MoneyDisplay(new Money(exchange.getCurrency(), result), rate).display();
+        new MoneyDisplay(result, rate).display();
     }
     
     
