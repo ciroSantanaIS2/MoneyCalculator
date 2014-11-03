@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ExchangeDialog {
     
-    private CurrencySet set;
+    private final CurrencySet set;
     Exchange exchange;
     
     public ExchangeDialog(CurrencySet set) {
@@ -29,7 +29,6 @@ public class ExchangeDialog {
         showAvailableCurrencies(set);
         
         Scanner string = new Scanner(System.in);
-        
         
         while (true) {
             String entry = string.nextLine();
