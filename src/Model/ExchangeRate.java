@@ -3,15 +3,15 @@ package Model;
 public class ExchangeRate {
 
     private Currency from, to;
-    private float rate;
+    private double rate;
 
-    public ExchangeRate(Currency currencyFrom, Currency currencyTo, float rate) {
+    public ExchangeRate(Currency currencyFrom, Currency currencyTo, double rate) {
         this.from = currencyFrom;
         this.to = currencyTo;
         this.rate = rate;
     }
 
-    public float getRate() {
+    public double getRate() {
         return rate;
     }
 

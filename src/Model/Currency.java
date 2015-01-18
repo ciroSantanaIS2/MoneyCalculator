@@ -24,4 +24,8 @@ public class Currency {
     String getSymbol() {
         return symbol;
     }
+
+    public String getCode() {
+        return code;
+    }
 }

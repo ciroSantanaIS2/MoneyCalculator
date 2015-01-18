@@ -15,8 +15,8 @@ public class CurrencySet {
         return "CurrencySet{" + "set=" + set + '}';
     }
 
-    public ArrayList<Currency> getSet() {
-        return set;
+    public Currency[] getSet() {
+        return (Currency[]) set.toArray();
     }
 
     public void add(Currency currency) {

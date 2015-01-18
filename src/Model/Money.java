@@ -3,13 +3,13 @@ package Model;
 public class Money {
 
     private Currency currency;
-    private float amount;
+    private double amount;
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
     
-    public Money(Currency currency, float amount) {
+    public Money(Currency currency, double amount) {
         this.currency = currency;
         this.amount = amount;
     }

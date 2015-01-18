@@ -1,6 +1,6 @@
-package View.GraphicUserInterfaceimport 
+package View.GraphicUserInterface; 
 
-static java.awt.BorderLayout.SOUTH;
+import static java.awt.BorderLayout.SOUTH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

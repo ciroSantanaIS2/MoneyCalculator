@@ -6,7 +6,7 @@ import Model.Money;
 
 public class Exchanger {
 
-    public static Money convert(Currency currency, float amount, float rate) {
+    public static Money convert(Currency currency, double amount, double rate) {
         return new Money(currency, amount*rate);
     }
     
