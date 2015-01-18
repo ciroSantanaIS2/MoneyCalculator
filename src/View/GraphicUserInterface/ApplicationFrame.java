@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import model.Currency;
+import Model.Currency;
 import View.UserInterface.ExchangeDialog;
 
 public class ApplicationFrame extends JFrame {
